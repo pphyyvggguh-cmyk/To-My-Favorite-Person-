@@ -1,125 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff6ee">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fff6ee">
 <title>To My Favorite Person, Wulan ♡</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#fff6ee;--pink:#f1d7e1;--rose:#d99bb4;--wine:#803d58;--ink:#49313b;--white:#fffdfb}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;min-height:100vh}
-button,input,textarea{font:inherit}button{cursor:pointer}
-.screen{display:none;min-height:100vh;padding:28px 20px 100px;align-items:center;justify-content:center;animation:appear .35s ease}
-.screen.active{display:flex}
-.wrap{width:100%;max-width:620px;margin:auto;text-align:center}
-.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--wine);margin-bottom:16px}
-h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500}
-h1{font-size:clamp(36px,10vw,54px);line-height:1.12;margin:10px 0 18px}
-h2{font-size:32px;margin:8px 0 16px}
-h3{font-size:20px;margin:8px 0}
-p{line-height:1.8;font-size:14px}
-.heart{color:var(--wine);font-size:34px;margin:12px}
-.card{background:var(--white);border:1px solid #edd9df;border-radius:24px;padding:26px 22px;box-shadow:0 12px 40px #803d5810}
-.btn{border:0;border-radius:999px;padding:14px 22px;background:var(--wine);color:white;margin:7px 3px;min-height:46px;transition:transform .2s,box-shadow .2s}
-.btn:hover{box-shadow:0 6px 18px #803d5830;transform:translateY(-1px)}
-.btn:active{transform:scale(.97)}
-.btn.secondary{background:var(--pink);color:var(--wine)}
-.field,.edit-field{display:block;width:100%;padding:14px;margin:12px 0 10px;border:1px solid #dfbdcb;border-radius:14px;background:white;color:var(--ink)}
-.field{text-align:center}
-.small{color:#947783;font-size:12px}
-.envelope{font-size:76px;margin:14px}
-.letter{text-align:left;white-space:pre-line}
-.dots{color:var(--wine);letter-spacing:4px;margin:12px}
-.vinyl{width:210px;height:210px;border-radius:50%;margin:22px auto;background:repeating-radial-gradient(circle,#30272c 0 3px,#463840 4px 6px);display:grid;place-items:center;box-shadow:0 8px 25px #49313b30}
-.vinyl.playing{animation:spin 5s linear infinite}
-.vinyl-label{width:76px;height:76px;border-radius:50%;background:var(--rose);border:5px solid var(--cream);display:grid;place-items:center;font-size:23px}
-.envelope-btn{display:block;width:100%;margin:10px 0;padding:18px;border:1px solid #edd9df;border-radius:16px;background:white;color:var(--wine);text-align:left}
-.cake{font-size:90px;margin:14px}
-footer{position:fixed;z-index:20;bottom:0;left:0;right:0;padding:8px 5px;background:#fff6eeeF;backdrop-filter:blur(12px);display:flex;justify-content:center;gap:3px;flex-wrap:wrap;border-top:1px solid #edd9df}
-footer button{border:0;background:transparent;color:var(--wine);padding:9px 10px;font-size:11px;border-radius:20px}
-footer button:focus-visible,.btn:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
-.hidden{display:none!important}
-@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes twinkle{0%,100%{opacity:.35}50%{opacity:1}}
-@keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
-/* Memory gallery */
-.gallery-wrap{max-width:1100px}
-.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;text-align:left;margin:22px 0}
-.memory-card{background:white;border:1px solid #edd9df;border-radius:17px;padding:8px;box-shadow:0 5px 18px #803d580c;overflow:hidden;min-width:0}
-.memory-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#f7e3e9,#f5d4df);color:var(--wine);font-family:'Playfair Display',serif;font-size:17px;text-align:center;padding:12px;border-radius:11px}
-.memory-photo.has-image{display:block;padding:0}
-.memory-date{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#a2788a;margin:10px 3px 4px}
-.memory-title{font-family:'Playfair Display',serif;font-size:17px;margin:3px}
-.memory-caption{font-size:12px;line-height:1.55;margin:5px 3px 8px;overflow-wrap:anywhere}
-.memory-actions{display:flex;gap:5px;flex-wrap:wrap}
-.mini-btn{border:1px solid #ead0da;border-radius:20px;background:#fff6f8;color:var(--wine);padding:7px 9px;font-size:11px}
-.gallery-tools{background:#fffdfb;border:1px solid #edd9df;border-radius:20px;padding:16px;margin:18px 0;text-align:left}
-.gallery-tools summary{cursor:pointer;color:var(--wine);font-weight:600}
-.edit-grid{display:grid;grid-template-columns:1fr;gap:6px;margin-top:12px}
-.earth-scene{height:310px;position:relative;display:grid;place-items:center;overflow:hidden;border-radius:25px;background:radial-gradient(ellipse at center,#34264c 0,#15172f 52%,#090d20 100%);margin:22px 0;isolation:isolate}
-.stars,.stars:before,.stars:after{position:absolute;inset:0;background-image:radial-gradient(2px 2px at 20% 30%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 70% 20%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 80% 70%,#fff 50%,transparent 60%),radial-gradient(2px 2px at 40% 80%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 55% 45%,#fff 50%,transparent 60%);animation:twinkle 4s ease-in-out infinite;content:"";z-index:-1}
-.stars:before{content:"";transform:translate(25px,14px) scale(1.2);animation-delay:1s}
-.earth{width:190px;height:190px;border-radius:50%;position:relative;overflow:hidden;background:linear-gradient(90deg,#102a5c,#287fc2 40%,#80d5ed 65%,#12356b);box-shadow:inset -25px -12px 35px #050a2d,inset 10px 5px 20px #b8f4ff,0 0 38px #5bc8ff75;animation:earthturn 16s linear infinite}
-.earth:before{content:"";position:absolute;inset:-10%;background:repeating-linear-gradient(90deg,transparent 0 15px,#ffffff13 16px 18px,transparent 19px 35px);border-radius:50%;animation:earthturn 8s linear infinite}
-.continent{position:absolute;background:#5bc58c;filter:drop-shadow(0 0 2px #b7ffc2);border-radius:55% 35% 60% 35%;opacity:.95}
-.c1{width:63px;height:85px;left:37px;top:28px;transform:rotate(22deg);clip-path:polygon(20% 0,85% 12%,100% 43%,62% 60%,70% 100%,35% 80%,0 42%)}
-.c2{width:44px;height:88px;left:76px;top:94px;transform:rotate(-15deg);clip-path:polygon(15% 0,100% 20%,74% 57%,50% 100%,25% 77%,0 30%)}
-.c3{width:68px;height:54px;right:17px;top:47px;transform:rotate(-20deg);clip-path:polygon(0 25%,35% 0,100% 18%,80% 65%,43% 100%,20% 67%)}
-.c4{width:38px;height:26px;right:36px;bottom:28px;transform:rotate(15deg)}
-.earth-label{position:absolute;bottom:18px;color:#fff;font-size:12px;letter-spacing:2px;text-shadow:0 1px 6px #000}
-#songDock{position:fixed;right:14px;top:14px;z-index:50}
-.music-toggle{width:48px;height:48px;border:0;border-radius:50%;background:var(--wine);color:white;font-size:21px;box-shadow:0 5px 20px #803d5850}
-.music-panel{position:absolute;right:0;top:57px;width:min(290px,calc(100vw - 28px));padding:14px;background:#fffdfb;border:1px solid #edd9df;border-radius:20px;box-shadow:0 12px 35px #49313b30;text-align:left}
-.music-panel h3{margin:2px 0 8px}
-.music-panel input{width:100%;padding:11px;border:1px solid #dfbdcb;border-radius:10px;margin:7px 0}
-.music-panel iframe{width:100%;height:200px;border:0;border-radius:12px;background:#f1d7e1}
-.music-panel .btn{width:100%;margin:5px 0;padding:10px;min-height:40px}
-.float-heart{position:fixed;z-index:60;pointer-events:none;font-size:22px;animation:heartfly 1s ease-out forwards}
-@keyframes heartfly{to{transform:translateY(-90px) rotate(25deg) scale(1.5);opacity:0}}
-@media(min-width:600px){.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.edit-grid{grid-template-columns:1fr 1fr}.memory-photo{aspect-ratio:4/3}}
-@media(min-width:900px){.gallery-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
-@media(orientation:landscape) and (max-height:600px){.gallery-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.screen{padding-top:18px}.earth-scene{height:240px}.earth{width:150px;height:150px}}
+:root{--cream:#fff6ee;--pink:#f1d7e1;--rose:#d99bb4;--wine:#803d58;--ink:#49313b;--white:#fffdfb;--line:#edd9df}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--wine);outline-offset:3px}.hero{min-height:100svh;display:grid;place-items:center;padding:38px 18px 55px;text-align:center;background:radial-gradient(ellipse at 20% 10%,#f7dfe8 0,transparent 35%),radial-gradient(ellipse at 90% 80%,#f0d8df 0,transparent 30%),var(--cream);position:relative;overflow:hidden}.hero:before,.hero:after{content:'♡';position:absolute;color:#d99bb455;font-size:110px;animation:float 6s ease-in-out infinite}.hero:before{left:7%;top:12%}.hero:after{right:8%;bottom:12%;animation-delay:-3s}.wrap{width:min(100%,900px);margin:auto}.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--wine);margin-bottom:15px}h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500}h1{font-size:clamp(40px,9vw,74px);line-height:1.08;margin:12px 0 20px}h2{font-size:clamp(29px,6vw,43px);margin:8px 0 15px}h3{font-size:23px;margin:10px 0}p{line-height:1.8;font-size:14px}.muted{color:#947783;font-size:12px}.heart{color:var(--wine);font-size:38px}.card{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:25px 22px;box-shadow:0 12px 40px #803d5810}.btn{border:0;border-radius:999px;padding:13px 21px;background:var(--wine);color:#fff;margin:5px 3px;min-height:44px;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-2px);box-shadow:0 7px 20px #803d5828}.btn.secondary{background:var(--pink);color:var(--wine)}.field{display:block;width:100%;padding:14px;margin:12px 0;border:1px solid #dfbdcb;border-radius:13px;background:white;color:var(--ink)}section.content-section{padding:78px 18px;position:relative;overflow:hidden}section.content-section:nth-of-type(even){background:#fffaf7}.section-head{text-align:center;margin:0 auto 30px;max-width:650px}.letter{white-space:pre-line;text-align:left;line-height:2}.envelope{font-size:64px;margin:10px}.polaroid{background:white;padding:10px 10px 18px;border-radius:8px;box-shadow:0 8px 25px #49313b16;transform:rotate(-.5deg)}.photo-frame{position:relative;overflow:hidden;border-radius:5px;background:linear-gradient(140deg,#f3d8e3,#fff1e8);isolation:isolate}.photo-frame img{display:block;width:100%;height:100%;min-height:190px;object-fit:cover;position:relative;z-index:1}.photo-frame .placeholder{display:grid;place-items:center;min-height:200px;color:var(--wine);font-family:'Playfair Display',serif;font-size:20px;text-align:center;padding:20px}.earth{position:absolute;z-index:2;right:10px;top:10px;width:46px;height:46px;border-radius:50%;opacity:.9;background:radial-gradient(circle at 30% 25%,#baf2ff 0 5%,transparent 6%),radial-gradient(ellipse at 60% 30%,#6bc69a 0 16%,transparent 17%),radial-gradient(ellipse at 35% 62%,#5fbb89 0 18%,transparent 19%),radial-gradient(circle at 35% 30%,#7edbff,#2477b8 72%);box-shadow:inset -7px -4px 9px #102c6c88,0 0 15px #8bd7ff88;animation:spin 8s linear infinite;pointer-events:none}.earth:after{content:'';position:absolute;inset:-5px;border:1px solid #b9eaff99;border-radius:50%;transform:rotate(-20deg) scaleY(.32)}.photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.memory-card{min-width:0;background:#fffdfb;border:1px solid var(--line);padding:9px;border-radius:16px;box-shadow:0 6px 18px #803d580b;transition:transform .2s}.memory-card:active{transform:scale(.98)}.memory-card .photo-frame{aspect-ratio:4/5}.memory-card .photo-frame img{height:100%;min-height:0;position:absolute;inset:0}.memory-card h3{font-size:17px;line-height:1.3;margin:12px 2px 4px}.memory-card p{font-size:12px;line-height:1.6;margin:5px 2px}.memory-card time{display:block;font-size:10px;letter-spacing:.6px;color:#947783;margin:0 2px}.memory-actions{display:flex;gap:5px;flex-wrap:wrap;margin:9px 2px 2px}.tiny-btn{border:1px solid var(--line);background:#fff5f8;color:var(--wine);border-radius:10px;padding:7px 9px;font-size:11px}.editor{margin:25px auto 0;max-width:650px}.editor summary{cursor:pointer;color:var(--wine);font-weight:600;padding:12px}.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.editor-grid textarea{min-height:75px;resize:vertical}.wide{grid-column:1/-1}.vinyl{width:120px;height:120px;border-radius:50%;margin:20px auto;background:repeating-radial-gradient(circle,#30272c 0 3px,#463840 4px 6px);display:grid;place-items:center;box-shadow:0 8px 25px #49313b30}.vinyl.playing{animation:spin 4s linear infinite}.vinyl-label{width:43px;height:43px;border-radius:50%;background:var(--rose);border:4px solid var(--cream);display:grid;place-items:center}.song-note{max-width:450px;margin:0 auto}.video-box{max-width:520px;margin:auto}.envelope-btn{display:block;width:100%;margin:10px 0;padding:17px;border:1px solid var(--line);border-radius:16px;background:white;color:var(--wine);text-align:left}.cake{font-size:80px;animation:bob 2s ease-in-out infinite}.secret-heart{font-size:60px;color:var(--wine);cursor:pointer;display:inline-block;animation:heartbeat 1.5s infinite}.stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}.star{position:absolute;color:#d99bb4;animation:float 5s ease-in-out infinite}.end{text-align:center;padding:60px 18px 120px;background:#f9e9ee}.music-fab{position:fixed;left:14px;bottom:14px;z-index:50;width:52px;height:52px;border-radius:50%;border:1px solid #ffffffaa;background:var(--wine);color:white;box-shadow:0 7px 24px #49313b44;font-size:22px}.music-panel{position:fixed;left:12px;bottom:76px;z-index:49;width:min(330px,calc(100vw - 24px));background:#fffdfb;border:1px solid var(--line);border-radius:20px;padding:15px;box-shadow:0 12px 40px #49313b30;display:none}.music-panel.open{display:block;animation:appear .25s ease}.music-panel-top{display:flex;align-items:center;justify-content:space-between}.music-panel input{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px}.music-panel iframe{display:block;width:100%;aspect-ratio:1/1;min-height:200px;border:0;border-radius:12px;margin-top:10px}.music-panel .muted{margin:8px 0}.chibi-guide{position:fixed;right:9px;bottom:12px;z-index:45;width:116px;border:0;background:transparent;padding:0;filter:drop-shadow(0 5px 6px #49313b20);animation:chibiBob 2.4s ease-in-out infinite;transform-origin:bottom center}.chibi-guide svg{width:100%;height:auto;display:block;overflow:visible}.chibi-guide .arm-wave{transform-origin:80px 103px;animation:wave 1.5s ease-in-out infinite}.chibi-guide .blink{animation:blink 4s infinite}.chibi-guide:active{transform:scale(.94)}.guide-bubble{position:fixed;right:105px;bottom:110px;z-index:46;max-width:min(245px,62vw);background:white;border:1px solid var(--line);border-radius:16px 16px 4px 16px;padding:12px 14px;box-shadow:0 8px 25px #49313b20;font-size:12px;line-height:1.55;display:none}.guide-bubble.show{display:block;animation:appear .25s ease}.guide-bubble button{border:0;background:transparent;color:var(--wine);font-weight:bold;float:right}.toast{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:80;background:var(--wine);color:white;padding:10px 15px;border-radius:999px;font-size:12px;display:none}.toast.show{display:block}.hidden{display:none!important}@keyframes spin{to{transform:rotate(360deg)}}@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@keyframes float{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-13px) rotate(8deg)}}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}@keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.13)}30%{transform:scale(1)}}@keyframes chibiBob{0%,100%{translate:0 0}50%{translate:0 -7px}}@keyframes wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-22deg)}55%{transform:rotate(12deg)}75%{transform:rotate(-15deg)}}@keyframes blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.1)}}
+@media(min-width:760px){.photo-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}.chibi-guide{width:145px;right:20px;bottom:16px}.guide-bubble{right:150px;bottom:130px}.music-fab{left:20px;bottom:20px}.music-panel{left:20px;bottom:82px}}
+@media(max-width:480px){.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.memory-card{padding:7px}.memory-card h3{font-size:15px}.memory-card .photo-frame{aspect-ratio:3/4}.editor-grid{grid-template-columns:1fr}.wide{grid-column:auto}.chibi-guide{width:92px;right:4px;bottom:8px}.guide-bubble{right:84px;bottom:88px}.music-fab{width:47px;height:47px;left:10px;bottom:10px}.music-panel{left:9px;bottom:66px;width:min(310px,calc(100vw - 18px))}section.content-section{padding:60px 13px}}
+@media(orientation:landscape) and (max-height:520px){.hero{min-height:120vh}.photo-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.chibi-guide{width:75px}.guide-bubble{bottom:75px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
-</head>
+</style></head>
 <body>
-<div id="songDock">
-  <button class="music-toggle" aria-label="Open music player" onclick="toggleMusicPanel()">♫</button>
-  <div class="music-panel hidden" id="musicPanel">
-    <h3>Our Little Song ♡</h3>
-    <p class="small">Paste a YouTube video link or video ID to play it here. No download needed.</p>
-    <input id="youtubeLink" type="url" placeholder="Paste YouTube link here" aria-label="YouTube video link">
-    <button class="btn" onclick="loadYouTube()">Play Song ♡</button>
-    <iframe id="youtubePlayer" title="YouTube music player" src="about:blank" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <p class="small" id="musicStatus" aria-live="polite">You can close this panel while browsing.</p>
-  </div>
-</div>
-
+<div class="toast" id="toast" role="status"></div>
+<header class="hero" id="home"><div class="stars"><span class="star" style="left:15%;top:25%">✦</span><span class="star" style="right:18%;top:20%;animation-delay:-2s">♡</span><span class="star" style="right:22%;bottom:23%;animation-delay:-1s">✧</span></div><div class="wrap"><div class="eyebrow">A little secret, just for you</div><div class="heart">♡</div><h1>To My Favorite<br>Person, Wulan</h1><p>For my baby, my favorite girl, and my future wife.</p><div class="card" style="max-width:420px;margin:25px auto"><p>When did our little story begin?</p><input class="field" id="password" type="password" inputmode="numeric" placeholder="DD / MM / YYYY" aria-label="Our anniversary date"><button class="btn" onclick="unlock()">Unlock My Gift ♡</button><p id="error" class="muted" role="status"></p><p class="muted">A tiny date. A very big meaning.</p></div><a href="#letter" class="muted">or scroll down to explore ↓</a></div></header>
 <main>
-<section class="screen active" id="s0"><div class="wrap">
-  <div class="eyebrow">A little secret, just for you</div><div class="heart">♡</div>
-  <h1>To My Favorite<br>Person, Wulan</h1>
-  <p>For my baby, my favorite girl, and my future wife.</p>
-  <div class="card"><p>When did our little story begin?</p>
-    <input class="field" id="password" type="password" inputmode="numeric" placeholder="DD / MM / YYYY" aria-label="Our anniversary date">
-    <button class="btn" onclick="unlock()">Unlock My Gift ♡</button><p id="error" class="small" role="status"></p><p class="small">A tiny date. A very big meaning.</p>
-  </div>
-</div></section>
-
-<section class="screen" id="s1"><div class="wrap">
-  <div class="eyebrow">A letter, from me to you</div><div class="envelope">💌</div><h1>Something From My Heart</h1>
-  <p>A little letter for the girl who makes my days more special.</p><button class="btn" onclick="show('s2')">Open Your Letter ♡</button>
-</div></section>
-
-<section class="screen" id="s2"><div class="wrap">
-  <div class="eyebrow">A little piece of my heart</div><h2>To my baby, Wulan ♡</h2>
-  <div class="card letter">Baby,
+<section class="content-section" id="letter"><div class="wrap"><div class="section-head"><div class="eyebrow">A letter, from me to you</div><div class="envelope">💌</div><h2>Something From My Heart</h2><p>A little letter for the girl who makes my days more special.</p></div><article class="card letter">To my baby, Wulan ♡
 
 Happy birthday to my favorite girl. ♡
 
@@ -136,233 +32,34 @@ And selfishly, I hope I get to be part of many more of your little moments. More
 Happy birthday, my love. I'm so glad our story began.
 
 With all my love,
-Your future husband (manifesting 😭💍)</div>
-  <button class="btn" onclick="show('s3')">Enter Our Little World →</button>
-</div></section>
-
-<section class="screen" id="s3"><div class="wrap gallery-wrap">
-  <div class="eyebrow">Chapter 01 · Our memories</div><h2>Our Little Story ♡</h2>
-  <p>Thirty little spaces for our favorite moments. Tap Edit on a card to add a photo, date, title, and caption.</p>
-  <div class="gallery-grid" id="galleryGrid"></div>
-  <details class="gallery-tools">
-    <summary>♡ Gallery editor settings</summary>
-    <p class="small">Choose a card below and tap Edit to change its details. In this version, edits and selected photos are saved in this browser only. Firebase sync will be connected in the next setup step.</p>
-    <button class="btn secondary" onclick="resetGallery()">Reset gallery text</button>
-    <p class="small">Tip: choose compressed photos for faster loading on phones.</p>
-  </details>
-  <button class="btn secondary" onclick="show('s4')">Next: Our Song →</button>
-</div></section>
-
-<section class="screen" id="s4"><div class="wrap">
-  <div class="eyebrow">A song for us</div><h2>Our Song ♡</h2>
-  <div class="vinyl" id="vinyl"><div class="vinyl-label">♡</div></div>
-  <p>Our song is always one tap away in the music button at the top-right corner.</p>
-  <button class="btn" onclick="toggleMusicPanel()">Open Music Player ♫</button>
-  <p class="small">Paste a YouTube link in the player. YouTube search by title can be added later with an API key.</p>
-</div></section>
-
-<section class="screen" id="s5"><div class="wrap">
-  <div class="eyebrow">Just one more thing</div><h2>A Message From Me</h2>
-  <div class="card"><div style="font-size:55px">🎬 ♡</div><p>A little birthday message, saved just for you.</p>
-    <video id="birthdayVideo" controls playsinline preload="metadata" style="width:100%;border-radius:15px;background:#f1d7e1" class="hidden"></video>
-    <p class="small" id="videoNote">Your birthday video will be added later.</p>
-  </div><button class="btn" onclick="show('s6')">Continue ♡</button>
-</div></section>
-
-<section class="screen" id="s6"><div class="wrap">
-  <div class="eyebrow">Open when you need it</div><h2>Little Letters for You</h2>
-  <button class="envelope-btn" onclick="letter(0)">💌 When you need a smile</button>
-  <button class="envelope-btn" onclick="letter(1)">💗 When you miss me</button>
-  <button class="envelope-btn" onclick="letter(2)">🫶 When you need comfort</button>
-  <div class="card hidden" id="littleLetter" aria-live="polite"><h2 id="littleTitle"></h2><p id="littleMessage"></p><button class="btn secondary" onclick="document.getElementById('littleLetter').classList.add('hidden')">Close ♡</button></div>
-  <button class="btn" onclick="show('s7')">One More Surprise →</button>
-</div></section>
-
-<section class="screen" id="s7"><div class="wrap">
-  <div class="eyebrow">Make a wish, birthday girl</div><h1>Happy Birthday,<br>Wulan! ♡</h1><div class="cake">🎂</div>
-  <p>Close your eyes for a moment, make a little wish, and remember how loved you are.</p>
-  <button class="btn" onclick="wish()">Make a Wish ✨</button><p id="wishMessage" aria-live="polite"></p>
-  <button class="btn secondary" onclick="show('s8')">The Last Little Secret →</button>
-</div></section>
-
-<section class="screen" id="s8"><div class="wrap">
-  <div class="eyebrow">Until our next memory</div><div class="heart" onclick="bonus()" style="cursor:pointer" aria-label="Reveal a little secret">♥</div>
-  <h1>Our Story Isn't Over</h1><p>Twelve pictures, a little letter, and one birthday can't hold all the memories we still have ahead of us.</p>
-  <div class="card hidden" id="bonus"><h2>One Last Thing ♡</h2><p>Of all the people in this big world, I'm really glad I get to know you, Wulan. Here's to more little moments together.</p></div>
-  <button class="btn" onclick="show('s0')">Start Our Story Again ↺</button>
-</div></section>
-
-<section class="screen" id="s9"><div class="wrap">
-  <div class="eyebrow">A dream we share</div><h2>Our Little World 🌍</h2>
-  <p>One day, maybe we'll see more of this beautiful world together. Until then, let's keep dreaming.</p>
-  <div class="earth-scene" role="img" aria-label="An animated Earth in space"><div class="stars"></div><div class="earth"><i class="continent c1"></i><i class="continent c2"></i><i class="continent c3"></i><i class="continent c4"></i></div><div class="earth-label">YOU + ME, SOMEWHERE ♡</div></div>
-  <p>Every big adventure begins with a little dream. Here's to the places we haven't seen yet.</p>
-  <button class="btn" onclick="show('s3')">Back to Our Memories ♡</button>
-</div></section>
-</main>
-
-<footer aria-label="Website sections">
-  <button onclick="show('s0')">Home</button><button onclick="show('s2')">Letter</button><button onclick="show('s3')">Memories</button><button onclick="show('s4')">Song</button><button onclick="show('s9')">Our World 🌍</button><button onclick="show('s6')">Letters</button><button onclick="show('s7')">Birthday</button>
-</footer>
-
-<!-- Gallery editor dialog -->
-<div id="editOverlay" class="hidden" style="position:fixed;inset:0;z-index:80;background:#24141dcc;overflow:auto;padding:18px">
-  <div style="max-width:520px;margin:24px auto;background:#fffdfb;border-radius:22px;padding:20px">
-    <h2 style="font-size:27px">Edit Memory ♡</h2><p class="small">Changes are saved on this device only for now.</p>
-    <label for="editPhoto">Choose photo</label><input class="edit-field" type="file" id="editPhoto" accept="image/*">
-    <label for="editDate">Date</label><input class="edit-field" type="date" id="editDate">
-    <label for="editTitle">Title</label><input class="edit-field" id="editTitle" maxlength="80" placeholder="A special day ♡">
-    <label for="editCaption">Caption</label><textarea class="edit-field" id="editCaption" rows="3" maxlength="500" placeholder="Write about this memory..."></textarea>
-    <button class="btn" onclick="saveMemoryEdit()">Save on this device ♡</button><button class="btn secondary" onclick="closeEditor()">Cancel</button>
-  </div>
-</div>
-
+Your future husband (manifesting 😭💍)</article></div></section>
+<section class="content-section" id="memories"><div class="wrap"><div class="section-head"><div class="eyebrow">Chapter 01 · Our memories</div><h2>Our Little Story 🌍</h2><p>Thirty little windows into our story — with a tiny world spinning on every memory. ♡</p></div><div class="photo-grid" id="photoGrid"></div><details class="card editor"><summary>✎ Edit memories on this device</summary><p class="muted">Pilih kartu, ubah foto/tanggal/judul/caption, lalu simpan. Data ini tersimpan di browser perangkat ini saja; belum tersinkron ke HP Wulan.</p><div class="editor-grid"><label class="wide">Pilih kenangan<select id="editIndex" class="field" style="text-align:left;margin:5px 0"></select></label><label class="wide">Pilih foto<input id="editImage" class="field" type="file" accept="image/*"></label><label>Tanggal<input id="editDate" class="field" type="date"></label><label>Judul<input id="editTitle" class="field" maxlength="70"></label><label class="wide">Caption<textarea id="editCaption" class="field" maxlength="300"></textarea></label><div class="wide"><button class="btn" onclick="saveMemory()">Simpan kenangan ♡</button><button class="btn secondary" onclick="resetMemory()">Reset kartu ini</button></div></div></details></div></section>
+<section class="content-section" id="song"><div class="wrap"><div class="section-head"><div class="eyebrow">A song for us</div><div class="vinyl" id="vinyl"><div class="vinyl-label">♡</div></div><h2>Our Song</h2><p class="song-note">Pilih lagu dari YouTube dengan menempelkan tautannya di pemutar kecil pojok kiri bawah. Lagu diputar lewat pemutar resmi YouTube, tanpa perlu mengunduh file.</p><button class="btn" onclick="toggleMusic(true)">Open our music player ♫</button></div></div></section>
+<section class="content-section" id="world"><div class="wrap"><div class="section-head"><div class="eyebrow">A thousand places, one favorite person</div><h2>Our Little World 🌍</h2><p>Someday, maybe we'll see the world together. Until then, every little moment is already an adventure.</p><div class="earth" style="position:relative;display:inline-block;inset:auto;width:105px;height:105px;margin:20px auto"></div><p class="muted">One day at a time, one dream at a time. ♡</p></div></div></section>
+<section class="content-section" id="video"><div class="wrap"><div class="section-head"><div class="eyebrow">Just one more thing</div><h2>A Message From Me</h2><div class="card video-box"><div style="font-size:48px">🎬 ♡</div><p>A little birthday message, saved just for you.</p><label class="btn secondary" for="videoUpload">Choose birthday video</label><input id="videoUpload" class="hidden" type="file" accept="video/*"><video id="birthdayVideo" controls playsinline preload="metadata" class="hidden" style="width:100%;border-radius:15px;background:#f1d7e1;margin-top:12px"></video><p class="muted" id="videoNote">Video yang dipilih hanya aktif di browser ini; jangan pilih video berukuran sangat besar.</p></div></div></div></section>
+<section class="content-section" id="open-when"><div class="wrap"><div class="section-head"><div class="eyebrow">Open when you need it</div><h2>Little Letters for You</h2></div><button class="envelope-btn" onclick="letter(0)">💌 When you need a smile</button><button class="envelope-btn" onclick="letter(1)">💗 When you miss me</button><button class="envelope-btn" onclick="letter(2)">🫶 When you need comfort</button><div class="card hidden" id="littleLetter" aria-live="polite"><h3 id="littleTitle"></h3><p id="littleMessage"></p><button class="btn secondary" onclick="document.getElementById('littleLetter').classList.add('hidden')">Close ♡</button></div></div></section>
+<section class="content-section" id="birthday"><div class="wrap section-head"><div class="eyebrow">Make a wish, birthday girl</div><h2>Happy Birthday,<br>Wulan! ♡</h2><div class="cake">🎂</div><p>Close your eyes for a moment, make a little wish, and remember how loved you are.</p><button class="btn" onclick="wish()">Make a Wish ✨</button><p id="wishMessage" aria-live="polite"></p></div></section>
+</main><footer class="end" id="secret"><div class="heart">♡</div><h2>Our Story Isn't Over</h2><p>Twelve pictures can't hold our whole story. There's still so much left to write with you, Wulan.</p><div class="secret-heart" onclick="bonus()" role="button" tabindex="0" aria-label="Reveal a little secret">♥</div><div class="card hidden" id="bonus" style="max-width:500px;margin:20px auto"><h3>One Last Thing ♡</h3><p>Of all the people in this big world, I'm really glad I get to know you, Wulan. Here's to more little moments together.</p></div><button class="btn secondary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to our beginning ↑</button></footer>
+<button class="music-fab" id="musicFab" onclick="toggleMusic()" aria-label="Open music player" title="Our song">♫</button><aside class="music-panel" id="musicPanel" aria-label="YouTube music player"><div class="music-panel-top"><strong>Our Little Song ♡</strong><button class="tiny-btn" onclick="toggleMusic(false)" aria-label="Close music player">✕</button></div><p class="muted">Tempel tautan YouTube atau ID video:</p><input id="youtubeUrl" placeholder="https://youtu.be/..." inputmode="url"><button class="btn" style="width:100%;margin:9px 0 0" onclick="playYoutube()">Play song ♫</button><div id="youtubePlayerWrap"></div><p class="muted">Pemutar resmi YouTube. Beberapa video mungkin tidak mengizinkan pemutaran tertanam.</p></aside>
+<div class="guide-bubble show" id="guideBubble"><button onclick="hideGuide()" aria-label="Close greeting">×</button><span id="guideText">Hai Wulan! ♡ Aku bakal nemenin kamu keliling website ini.</span></div>
+<button class="chibi-guide" id="chibiGuide" onclick="guideTap()" aria-label="Tap the chibi guide" title="Tap me!"><svg viewBox="0 0 150 210" role="img" aria-label="Chibi pemandu berambut hitam, berkacamata, kaos hitam, dan ransel abu-abu"><ellipse cx="75" cy="198" rx="39" ry="6" fill="#49313b22"/><path d="M38 101 Q25 102 27 145 L34 167 L50 164 L50 119 M111 102 Q128 107 124 145 L115 167 L101 163 L102 120" fill="#74717a" stroke="#49313b" stroke-width="3"/><path d="M48 103 Q75 91 102 103 L111 162 Q76 176 39 162Z" fill="#242126" stroke="#49313b" stroke-width="3"/><path d="M48 105 L39 151 M101 105 L111 151" stroke="#77717a" stroke-width="9"/><path d="M54 88 L54 105 Q75 119 96 105 L96 88" fill="#f3bc91" stroke="#49313b" stroke-width="2"/><path d="M38 45 Q39 12 75 12 Q112 12 113 49 L108 80 Q102 103 75 105 Q48 103 41 80Z" fill="#f6c79e" stroke="#49313b" stroke-width="3"/><path d="M37 61 Q21 35 45 17 Q58 3 79 8 Q111 6 118 31 Q127 46 111 64 L106 43 Q94 39 83 27 Q66 47 42 47Z" fill="#211c20" stroke="#49313b" stroke-width="3"/><path d="M43 36 Q58 17 73 25 Q91 6 109 35 L108 49 Q91 42 82 31 Q63 48 42 47Z" fill="#30282c"/><path d="M43 55 Q54 48 66 55 M84 55 Q97 48 108 55" fill="none" stroke="#49313b" stroke-width="2"/><g class="blink"><ellipse cx="57" cy="64" rx="7" ry="9" fill="#fff"/><ellipse cx="94" cy="64" rx="7" ry="9" fill="#fff"/><circle cx="59" cy="65" r="4" fill="#49313b"/><circle cx="92" cy="65" r="4" fill="#49313b"/><circle cx="60" cy="63" r="1.5" fill="#fff"/><circle cx="93" cy="63" r="1.5" fill="#fff"/></g><path d="M39 51 Q57 45 73 52 L73 70 Q56 74 40 68Z M78 52 Q94 45 111 51 L109 68 Q93 74 78 70Z" fill="none" stroke="#171519" stroke-width="5"/><path d="M73 57 L78 57" stroke="#171519" stroke-width="5"/><path d="M65 81 Q75 90 85 80" fill="none" stroke="#9d4f5e" stroke-width="3" stroke-linecap="round"/><path d="M39 111 Q23 95 20 75 Q19 65 27 64 Q34 64 35 74 L43 89" fill="#f6c79e" stroke="#49313b" stroke-width="3"/><g class="arm-wave"><path d="M104 111 Q121 99 125 75 L130 59 Q133 51 140 55 Q146 59 141 69 L136 91 Q133 111 116 126Z" fill="#f6c79e" stroke="#49313b" stroke-width="3"/><path d="M129 59 Q124 45 131 42 Q136 42 137 51 Q140 41 145 45 Q149 49 142 60Z" fill="#f6c79e" stroke="#49313b" stroke-width="3"/></g><path d="M49 160 L45 184 Q59 191 73 185 L72 164 M79 164 L81 185 Q96 192 109 184 L103 160" fill="#353139" stroke="#49313b" stroke-width="3"/><path d="M43 183 Q56 180 72 185 L73 197 L39 197 Q33 193 43 183 M81 185 Q96 181 109 184 L117 194 Q117 198 110 198 L80 198Z" fill="#f8f5f1" stroke="#49313b" stroke-width="3"/><path d="M40 192 L71 192 M83 192 L112 192" stroke="#29252a" stroke-width="4"/></svg></button>
 <script>
-const ANNIVERSARY="02/04/2026";
-const STORAGE_KEY="wulanGalleryLocal_v1";
-const defaultMemories=[
-["","Look at Us, Baby ♡","Just two people making memories… and me somehow becoming the luckiest guy ever.",""],
-["","Just You and Me","My favorite person, caught in one little frame.",""],
-["","The Start of Something Special","Little did I know how many memories we'd make after this.",""],
-["","My Favorite Trouble Maker","Baby girl, how are you this cute and this annoying at the same time? 😭♡",""],
-["","A Little Piece of Happiness","Sometimes, the little things are the ones I remember most.",""],
-["","You Make Me Smile","If happiness had a little face, I bet it would remind me of you.",""],
-["","A Memory I Treasure","There's a reason this moment deserves a place in my little album.",""],
-["","My Kind of Perfect","Not because everything was perfect, but because this memory is ours.",""],
-["","If I Could Keep a Moment","I'd keep the feeling behind this picture a little longer.",""],
-["","Still My Favorite Girl","Through all the little changes, you're still my favorite person.",""],
-["","More Memories, Please","My baby, I think we still have so many little adventures ahead of us.",""],
-["","This Is Only the Beginning","Twelve pictures can't hold our whole story. There's still so much left to write with you, Wulan.",""],
-["","Little Things, Big Feelings","Some moments are small but stay with us for a long time.",""],
-["","A Day to Remember","I hope we get to look back at this and smile again.",""],
-["","Your Favorite Smile","A tiny reminder of a moment worth keeping.",""],
-["","Our Kind of Fun","The best memories are often the ones we never planned.",""],
-["","A Sweet Little Moment","Keeping this here so we can remember it later.",""],
-["","Another Page of Us","Our story is made of little moments just like this.",""],
-["","My Favorite Person","A little snapshot of why you mean so much to me.",""],
-["","A Memory to Keep","Some days deserve a special place in our album.",""],
-["","More Adventures Ahead","There's still so much of the world and life to discover.",""],
-["","Just Being Us","No grand plan needed, just another memory that's ours.",""],
-["","A Little Happiness","I hope this memory makes you smile whenever you see it.",""],
-["","One for the Album","A moment saved for our future selves.",""],
-["","A Chapter of Our Story","Every picture is another little piece of our story.",""],
-["","You and Me, Always Growing","Here's to learning, laughing, and making more memories.",""],
-["","Our Tiny Adventure","One day we'll have even more stories to tell.",""],
-["","The Best Kind of Ordinary","Ordinary days can become favorite memories too.",""],
-["","A Place in My Heart","This memory is small, but it means something to me.",""],
-["","To Many More Memories ♡","This is just one page of a story that's still being written."]
-];
-let memories=loadMemories();
-let editingIndex=0;
-let pendingImageData=null;
-function loadMemories(){
-  try{
-    const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
-    if(Array.isArray(saved)&&saved.length===30)return saved;
-  }catch(e){}
-  return defaultMemories.map(m=>({image:m[0],title:m[1],caption:m[2],date:m[3]}));
-}
-function saveLocalMemories(){
-  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(memories));return true}catch(e){alert("This photo may be too large for browser storage. Try a smaller/compressed image.");return false}
-}
-function renderGallery(){
-  const grid=document.getElementById("galleryGrid");grid.textContent="";
-  memories.forEach((m,i)=>{
-    const card=document.createElement("article");card.className="memory-card";
-    if(m.image){
-      const img=document.createElement("img");img.className="memory-photo has-image";img.src=m.image;img.alt=m.title||"Our memory";card.appendChild(img);
-    }else{
-      const empty=document.createElement("div");empty.className="memory-photo";empty.textContent="Our little memory ♡";card.appendChild(empty);
-    }
-    const date=document.createElement("div");date.className="memory-date";date.textContent=m.date?formatDate(m.date):"A DAY TO REMEMBER";
-    const title=document.createElement("h3");title.className="memory-title";title.textContent=m.title||"Our Memory";
-    const caption=document.createElement("p");caption.className="memory-caption";caption.textContent=m.caption||"A little moment, kept just for us. ♡";
-    const actions=document.createElement("div");actions.className="memory-actions";
-    const edit=document.createElement("button");edit.className="mini-btn";edit.textContent="Edit ♡";edit.onclick=()=>openEditor(i);
-    const clear=document.createElement("button");clear.className="mini-btn";clear.textContent="Remove photo";clear.onclick=()=>removePhoto(i);
-    actions.append(edit,clear);card.append(date,title,caption,actions);grid.appendChild(card);
-  });
-}
-function formatDate(date){const d=new Date(date+"T12:00:00");return Number.isNaN(d.getTime())?date:d.toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"})}
-function openEditor(i){
-  editingIndex=i;pendingImageData=null;const m=memories[i];
-  document.getElementById("editDate").value=m.date||"";
-  document.getElementById("editTitle").value=m.title||"";
-  document.getElementById("editCaption").value=m.caption||"";
-  document.getElementById("editPhoto").value="";
-  document.getElementById("editOverlay").classList.remove("hidden");
-}
-function closeEditor(){document.getElementById("editOverlay").classList.add("hidden")}
-document.getElementById("editPhoto").addEventListener("change",function(){
-  const file=this.files&&this.files[0];if(!file)return;
-  if(!file.type.startsWith("image/")){alert("Choose an image file.");this.value="";return}
-  if(file.size>5*1024*1024){alert("Choose an image under 5 MB for this local demo. Online photo storage will be connected later.");this.value="";return}
-  const reader=new FileReader();reader.onload=()=>{pendingImageData=reader.result};reader.readAsDataURL(file);
-});
-function saveMemoryEdit(){
-  const m=memories[editingIndex];
-  m.date=document.getElementById("editDate").value;
-  m.title=document.getElementById("editTitle").value.trim()||"Our Memory";
-  m.caption=document.getElementById("editCaption").value.trim();
-  if(pendingImageData)m.image=pendingImageData;
-  if(saveLocalMemories()){renderGallery();closeEditor();pendingImageData=null}
-}
-function removePhoto(i){if(!confirm("Remove the photo from this card on this device?"))return;memories[i].image="";if(saveLocalMemories())renderGallery()}
-function resetGallery(){if(!confirm("Reset all 30 cards to their default text and remove saved local photos?"))return;memories=defaultMemories.map(m=>({image:m[0],title:m[1],caption:m[2],date:m[3]}));saveLocalMemories();renderGallery()}
-function show(id){
-  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
-  const target=document.getElementById(id);if(target)target.classList.add("active");
-  window.scrollTo({top:0,behavior:"smooth"});
-  const video=document.getElementById("birthdayVideo");if(id!=="s5")video.pause();
-}
-function unlock(){
-  const value=document.getElementById("password").value.trim();
-  if(value===ANNIVERSARY){document.getElementById("error").textContent="";show("s1")}
-  else document.getElementById("error").textContent="Not quite, baby. Try our special date again ♡";
-}
-document.getElementById("password").addEventListener("keydown",e=>{if(e.key==="Enter")unlock()});
-const letters=[
-["When you need a smile","Baby, here's your reminder that you're someone's favorite person. You make ordinary days special just by being you. I hope something makes you smile today — and if not, imagine me trying way too hard to make you laugh. 😭♡"],
-["When you miss me","If we're apart right now, remember that a little distance doesn't erase the good things we share. Think of one of our favorite memories, take a breath, and save a story to tell me when we talk again. ♡"],
-["When you need comfort","You don't have to have everything figured out today, Wulan. It's okay to rest, take things one step at a time, and ask someone you trust for support. I hope tomorrow feels a little lighter. Be gentle with yourself, baby. 🫶"]
-];
-function letter(i){document.getElementById("littleTitle").textContent=letters[i][0];document.getElementById("littleMessage").textContent=letters[i][1];document.getElementById("littleLetter").classList.remove("hidden")}
-function wish(){document.getElementById("wishMessage").textContent="✨ Happy birthday, my baby! May this year bring you beautiful surprises, happy memories, and so many reasons to smile. ♡ 🎉";burstHearts()}
-function bonus(){document.getElementById("bonus").classList.toggle("hidden")}
-function toggleMusicPanel(){document.getElementById("musicPanel").classList.toggle("hidden")}
-function parseYouTubeId(raw){
-  const input=raw.trim();if(/^[\w-]{11}$/.test(input))return input;
-  try{
-    const u=new URL(input);
-    if(u.hostname==="youtu.be"||u.hostname.endsWith(".youtu.be"))return u.pathname.split("/").filter(Boolean)[0]||null;
-    if(u.hostname.includes("youtube.com")){
-      if(u.pathname==="/watch")return u.searchParams.get("v");
-      const parts=u.pathname.split("/").filter(Boolean);
-      if(["embed","shorts","live"].includes(parts[0]))return parts[1]||null;
-    }
-  }catch(e){}
-  return null;
-}
-function loadYouTube(){
-  const raw=document.getElementById("youtubeLink").value;
-  const id=parseYouTubeId(raw);const status=document.getElementById("musicStatus");
-  if(!id||!/^[\w-]{11}$/.test(id)){status.textContent="That link doesn't look like a YouTube video link. Try Share → Copy link.";return}
-  document.getElementById("youtubePlayer").src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id)+"?playsinline=1&rel=0";
-  status.textContent="Song loaded ♡ Press play in the YouTube player.";
-  document.getElementById("vinyl").classList.add("playing");
-}
-document.getElementById("youtubePlayer").addEventListener("load",()=>{});
-function toggleVinyl(){document.getElementById("vinyl").classList.toggle("playing")}
-function burstHearts(){
-  for(let i=0;i<9;i++){
-    const h=document.createElement("span");h.className="float-heart";h.textContent=["♡","♥","✨"][i%3];
-    h.style.left=(15+Math.random()*70)+"vw";h.style.top=(45+Math.random()*35)+"vh";document.body.appendChild(h);setTimeout(()=>h.remove(),1100);
-  }
-}
-document.addEventListener("click",e=>{
-  if(e.target.closest("button,.heart,.memory-card")){if(e.target.closest("#songDock")||e.target.closest("#editOverlay"))return}
-});
-renderGallery();
-</script>
-</body>
-</html>
+const ANNIVERSARY='02/04/2026';
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
+function unlock(){const v=document.getElementById('password').value.trim();if(v===ANNIVERSARY){document.getElementById('error').textContent='';document.getElementById('letter').scrollIntoView({behavior:'smooth'});toast('Welcome to your little world, Wulan ♡')}else document.getElementById('error').textContent='Not quite, baby. Try our special date again ♡'}
+document.getElementById('password').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
+const defaultMemories=Array.from({length:30},(_,i)=>({title:['Look at Us, Baby ♡','Just You and Me','The Start of Something Special','My Favorite Trouble Maker','A Little Piece of Happiness','You Make Me Smile','A Memory I Treasure','My Kind of Perfect','If I Could Keep a Moment','Still My Favorite Girl'][i%10],date:'',caption:['Just two people making memories… and me somehow becoming the luckiest guy ever.','My favorite person, caught in one little frame.','Little did I know how many memories we would make after this.','Baby girl, how are you this cute and this annoying at the same time? 😭♡','Sometimes, the little things are the ones I remember most.'][i%5],image:''}));
+let memories=defaultMemories.map(x=>({...x}));try{const saved=localStorage.getItem('wulanMemoriesV2');if(saved){const parsed=JSON.parse(saved);if(Array.isArray(parsed)&&parsed.length===30)memories=parsed}}catch(e){}
+function renderGrid(){const grid=document.getElementById('photoGrid');grid.innerHTML='';memories.forEach((m,i)=>{const card=document.createElement('article');card.className='memory-card';const frame=document.createElement('div');frame.className='photo-frame';if(m.image){const img=document.createElement('img');img.src=m.image;img.alt=m.title||'Our memory';frame.appendChild(img)}else{const ph=document.createElement('div');ph.className='placeholder';ph.textContent='Our memory '+String(i+1).padStart(2,'0')+' ♡';frame.appendChild(ph)}const earth=document.createElement('span');earth.className='earth';earth.setAttribute('aria-hidden','true');frame.appendChild(earth);const h=document.createElement('h3');h.textContent=m.title||'Our little memory ♡';const date=document.createElement('time');date.textContent=m.date||'A DAY TO REMEMBER';const p=document.createElement('p');p.textContent=m.caption||'A little moment that belongs to us. ♡';const actions=document.createElement('div');actions.className='memory-actions';const edit=document.createElement('button');edit.className='tiny-btn';edit.textContent='Edit';edit.onclick=()=>{document.getElementById('editIndex').value=String(i);loadEditor();document.querySelector('.editor').open=true;document.querySelector('.editor').scrollIntoView({behavior:'smooth',block:'center'})};actions.append(edit);card.append(frame,date,h,p,actions);grid.appendChild(card)});const select=document.getElementById('editIndex');const old=select.value;select.innerHTML='';memories.forEach((m,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=String(i+1).padStart(2,'0')+' · '+(m.title||'Memory');select.appendChild(o)});select.value=old||'0';loadEditor()}
+function loadEditor(){const i=Number(document.getElementById('editIndex').value||0),m=memories[i];if(!m)return;document.getElementById('editDate').value=m.date||'';document.getElementById('editTitle').value=m.title||'';document.getElementById('editCaption').value=m.caption||'';document.getElementById('editImage').value=''}
+document.getElementById('editIndex').addEventListener('change',loadEditor);
+document.getElementById('editImage').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(!f)return;if(!f.type.startsWith('image/')){toast('Pilih file gambar ya ♡');return}if(f.size>4*1024*1024){toast('Foto lebih dari 4 MB. Pilih foto lebih kecil agar browser tidak berat.');e.target.value='';return}const reader=new FileReader();reader.onload=()=>{window.pendingMemoryImage=reader.result;toast('Foto dipilih. Tekan Simpan kenangan ♡')};reader.readAsDataURL(f)});
+function saveMemory(){const i=Number(document.getElementById('editIndex').value||0);memories[i].date=document.getElementById('editDate').value;memories[i].title=document.getElementById('editTitle').value.trim()||'Our little memory ♡';memories[i].caption=document.getElementById('editCaption').value.trim();if(window.pendingMemoryImage){memories[i].image=window.pendingMemoryImage;window.pendingMemoryImage=null}try{localStorage.setItem('wulanMemoriesV2',JSON.stringify(memories));renderGrid();document.getElementById('editIndex').value=String(i);loadEditor();toast('Kenangan tersimpan di browser ini ♡')}catch(e){toast('Penyimpanan browser penuh. Coba foto yang lebih kecil.')}}
+function resetMemory(){const i=Number(document.getElementById('editIndex').value||0);memories[i]={...defaultMemories[i]};try{localStorage.setItem('wulanMemoriesV2',JSON.stringify(memories))}catch(e){}renderGrid();document.getElementById('editIndex').value=String(i);loadEditor();toast('Kartu direset ♡')}
+const letters=[['When you need a smile',"Baby, here's your reminder that you're someone's favorite person. You make ordinary days special just by being you. I hope something makes you smile today — and if not, imagine me trying way too hard to make you laugh. 😭♡"],['When you miss me','If we are apart right now, remember that a little distance does not erase the good things we share. Think of one of our favorite memories, take a breath, and save a story to tell me when we talk again. ♡'],['When you need comfort','You do not have to have everything figured out today, Wulan. It is okay to rest, take things one step at a time, and ask someone you trust for support. I hope tomorrow feels a little lighter. Be gentle with yourself, baby. 🫶']];function letter(i){document.getElementById('littleTitle').textContent=letters[i][0];document.getElementById('littleMessage').textContent=letters[i][1];document.getElementById('littleLetter').classList.remove('hidden');document.getElementById('littleLetter').scrollIntoView({behavior:'smooth',block:'center'})}
+function wish(){document.getElementById('wishMessage').textContent='✨ Happy birthday, my baby! May this year bring you beautiful surprises, happy memories, and so many reasons to smile. ♡ 🎉';for(let i=0;i<8;i++){const s=document.createElement('span');s.textContent=['♡','✦','✨'][i%3];s.style.cssText=`position:fixed;left:${10+Math.random()*80}%;top:${20+Math.random()*55}%;font-size:${18+Math.random()*22}px;color:#d99bb4;pointer-events:none;z-index:90;animation:float 1.5s ease-out forwards`;document.body.appendChild(s);setTimeout(()=>s.remove(),1700)}}function bonus(){document.getElementById('bonus').classList.toggle('hidden')}
+function toggleMusic(force){const p=document.getElementById('musicPanel');const open=typeof force==='boolean'?force:!p.classList.contains('open');p.classList.toggle('open',open);if(open)document.getElementById('youtubeUrl').focus({preventScroll:true})}
+function playYoutube(){const raw=document.getElementById('youtubeUrl').value.trim();let id='';try{if(/^[\w-]{11}$/.test(raw))id=raw;else{const u=new URL(raw);if(u.hostname.includes('youtu.be'))id=u.pathname.slice(1).split('/')[0];else if(u.searchParams.get('v'))id=u.searchParams.get('v');else if(u.pathname.includes('/embed/'))id=u.pathname.split('/embed/')[1].split('/')[0];}}catch(e){}if(!/^[\w-]{11}$/.test(id)){toast('Masukkan tautan video YouTube yang valid ya ♡');return}document.getElementById('youtubePlayerWrap').innerHTML=`<iframe title="YouTube music player" src="https://www.youtube-nocookie.com/embed/${id}?playsinline=1&rel=0" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;document.getElementById('vinyl').classList.add('playing');toast('Lagu siap diputar — tekan Play di YouTube ♫')}
+document.getElementById('videoUpload').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(!f)return;if(f.size>30*1024*1024){toast('Video lebih dari 30 MB. Pilih video yang lebih kecil ya.');e.target.value='';return}const video=document.getElementById('birthdayVideo');if(window.videoUrl)URL.revokeObjectURL(window.videoUrl);window.videoUrl=URL.createObjectURL(f);video.src=window.videoUrl;video.classList.remove('hidden');document.getElementById('videoNote').textContent='Video siap diputar di browser ini.'});
+const guideLines=['Hai Wulan! ♡ Aku bakal nemenin kamu keliling website ini.','Yuk lihat kenangan kalian. Tiap foto punya cerita kecil sendiri. 🌍','Kalau mau denger lagu, tekan tombol ♫ di pojok kiri bawah ya!','Jangan lupa buka surat kecil dan bikin birthday wish kamu. 🎂','Semoga suatu hari kalian bisa keliling dunia bareng! ♡'];let guideIndex=0;function guideTap(){guideIndex=(guideIndex+1)%guideLines.length;document.getElementById('guideText').textContent=guideLines[guideIndex];document.getElementById('guideBubble').classList.add('show');const ch=document.getElementById('chibiGuide');ch.animate([{transform:'rotate(0)'},{transform:'rotate(-7deg)'},{transform:'rotate(7deg)'},{transform:'rotate(0)'}],{duration:450});}function hideGuide(){document.getElementById('guideBubble').classList.remove('show')}setTimeout(()=>document.getElementById('guideBubble').classList.remove('show'),7000);document.getElementById('secret').querySelector('.secret-heart').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();bonus()}});renderGrid();
+</script></body></html>
