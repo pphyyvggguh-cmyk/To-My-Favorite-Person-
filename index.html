@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff6ee">
+<title>To My Favorite Person, Wulan ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:#fff6ee; --pink:#f1d7e1; --rose:#d99bb4;
+  --wine:#803d58; --ink:#49313b; --white:#fffdfb;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--cream); color:var(--ink);
+  font-family:'DM Sans',sans-serif; min-height:100vh;
+}
+button,input { font:inherit; }
+button { cursor:pointer; }
+.screen {
+  display:none; min-height:100vh; padding:28px 20px 90px;
+  align-items:center; justify-content:center;
+  animation:appear .35s ease;
+}
+.screen.active { display:flex; }
+.wrap { width:100%; max-width:480px; margin:auto; text-align:center; }
+.eyebrow {
+  font-size:11px; letter-spacing:3px; text-transform:uppercase;
+  color:var(--wine); margin-bottom:16px;
+}
+h1,h2 { font-family:'Playfair Display',serif; font-weight:500; }
+h1 { font-size:clamp(36px,10vw,54px); line-height:1.12; margin:10px 0 18px; }
+h2 { font-size:32px; margin:8px 0 16px; }
+p { line-height:1.8; font-size:14px; }
+.heart { color:var(--wine); font-size:34px; margin:12px; }
+.card {
+  background:var(--white); border:1px solid #edd9df;
+  border-radius:24px; padding:26px 22px;
+  box-shadow:0 12px 40px #803d5810;
+}
+.btn {
+  border:0; border-radius:999px; padding:14px 22px;
+  background:var(--wine); color:white; margin:7px 3px;
+  min-height:46px; transition:transform .2s;
+}
+.btn:active { transform:scale(.97); }
+.btn.secondary { background:var(--pink); color:var(--wine); }
+.field {
+  display:block; width:100%; padding:15px; margin:18px 0 10px;
+  border:1px solid #dfbdcb; border-radius:14px;
+  background:white; color:var(--ink); text-align:center;
+}
+.small { color:#947783; font-size:12px; }
+.envelope { font-size:76px; margin:14px; }
+.letter { text-align:left; white-space:pre-line; }
+.polaroid {
+  background:white; padding:12px 12px 22px; border-radius:4px;
+  box-shadow:0 8px 28px #49313b18; transform:rotate(-1deg);
+}
+.photo {
+  width:100%; aspect-ratio:4/5; background:var(--pink);
+  object-fit:cover; display:block;
+}
+.photo-empty {
+  display:flex; align-items:center; justify-content:center;
+  color:var(--wine); font-family:'Playfair Display',serif;
+  font-size:22px; padding:20px;
+}
+.dots { color:var(--wine); letter-spacing:4px; margin:12px; }
+.progress { height:3px; background:#ecd6df; border-radius:8px; overflow:hidden; }
+.progress span { display:block; width:0; height:100%; background:var(--wine); }
+.vinyl {
+  width:210px; height:210px; border-radius:50%; margin:22px auto;
+  background:repeating-radial-gradient(circle,#30272c 0 3px,#463840 4px 6px);
+  display:grid; place-items:center; box-shadow:0 8px 25px #49313b30;
+}
+.vinyl.playing { animation:spin 5s linear infinite; }
+.vinyl-label {
+  width:76px; height:76px; border-radius:50%; background:var(--rose);
+  border:5px solid var(--cream); display:grid; place-items:center;
+  font-size:23px;
+}
+.envelope-btn {
+  display:block; width:100%; margin:10px 0; padding:18px;
+  border:1px solid #edd9df; border-radius:16px;
+  background:white; color:var(--wine); text-align:left;
+}
+.cake { font-size:90px; margin:14px; }
+footer {
+  position:fixed; bottom:0; left:0; right:0; padding:12px 10px;
+  background:#fff6eeeF; backdrop-filter:blur(12px);
+  display:flex; justify-content:center; gap:5px; flex-wrap:wrap;
+  border-top:1px solid #edd9df;
+}
+footer button {
+  border:0; background:transparent; color:var(--wine);
+  padding:9px 10px; font-size:11px; border-radius:20px;
+}
+footer button:focus-visible,.btn:focus-visible {
+  outline:2px solid var(--wine); outline-offset:3px;
+}
+.hidden { display:none !important; }
+@keyframes appear { from {opacity:0;transform:translateY(8px)} to {opacity:1;transform:translateY(0)} }
+@keyframes spin { to {transform:rotate(360deg)} }
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation:none !important; transition:none !important; }
+}
+</style>
+</head>
+<body>
+
+<main>
+<section class="screen active" id="s0">
+  <div class="wrap">
+    <div class="eyebrow">A little secret, just for you</div>
+    <div class="heart">♡</div>
+    <h1>To My Favorite<br>Person, Wulan</h1>
+    <p>For my baby, my favorite girl, and my future wife.</p>
+    <div class="card">
+      <p>When did our little story begin?</p>
+      <input class="field" id="password" type="password"
+        inputmode="numeric" placeholder="DD / MM / YYYY"
+        aria-label="Our anniversary date">
+      <button class="btn" onclick="unlock()">Unlock My Gift ♡</button>
+      <p id="error" class="small" role="status"></p>
+      <p class="small">A tiny date. A very big meaning.</p>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="s1">
+  <div class="wrap">
+    <div class="eyebrow">A letter, from me to you</div>
+    <div class="envelope">💌</div>
+    <h1>Something From My Heart</h1>
+    <p>A little letter for the girl who makes my days more special.</p>
+    <button class="btn" onclick="show('s2')">Open Your Letter ♡</button>
+  </div>
+</section>
+
+<section class="screen" id="s2">
+  <div class="wrap">
+    <div class="eyebrow">A little piece of my heart</div>
+    <h2>To my baby, Wulan ♡</h2>
+    <div class="card letter">
+Baby,
+
+Happy birthday to my favorite girl. ♡
+
+I wish I could put every little thing I feel for you into words, but somehow, even a whole page doesn't feel like enough.
+
+Thank you for being you. Thank you for the little moments, the laughs, the silly things, and the memories that mean more to me than you might realize.
+
+You don't have to be perfect to be special to me. You can be cute, annoying, funny, dramatic, or all of them in one day — and somehow, you're still my favorite person. 😭
+
+I hope this new chapter brings you more reasons to smile, more dreams to chase, and more moments that make you proud of yourself. When things get difficult, I hope you remember that you deserve kindness, patience, and happiness, always.
+
+And selfishly, I hope I get to be part of many more of your little moments. More pictures, more laughs, more stories that we'll look back on someday.
+
+Happy birthday, my love. I'm so glad our story began.
+
+With all my love,
+Your future husband (manifesting 😭💍)
+    </div>
+    <button class="btn" onclick="show('s3')">Enter Our Little World →</button>
+  </div>
+</section>
+
+<section class="screen" id="s3">
+  <div class="wrap">
+    <div class="eyebrow">Chapter 01 · Our memories</div>
+    <h2>Our Little Story</h2>
+    <p>Little moments, kept in one little album. ♡</p>
+    <div class="polaroid">
+      <div id="photo" class="photo photo-empty">Our little memory ♡</div>
+      <h2 id="photoTitle" style="font-size:24px">Look at Us, Baby ♡</h2>
+      <p id="photoCaption">Just two people making memories… and me somehow becoming the luckiest guy ever.</p>
+    </div>
+    <p class="dots" id="photoCount">01 / 12</p>
+    <button class="btn secondary" onclick="movePhoto(-1)">← Back</button>
+    <button class="btn" onclick="movePhoto(1)">Next Memory →</button>
+    <p class="small">Your real photos can be added in the next setup step.</p>
+  </div>
+</section>
+
+<section class="screen" id="s4">
+  <div class="wrap">
+    <div class="eyebrow">A song for us</div>
+    <h2>Our Song ♡</h2>
+    <div class="vinyl" id="vinyl"><div class="vinyl-label">♡</div></div>
+    <p id="songName">A little song, just for you</p>
+    <p class="small">Add your chosen audio file in a later step.</p>
+    <audio id="audio" controls preload="none" style="width:100%"></audio>
+    <button class="btn secondary" onclick="toggleVinyl()">Play / Pause Animation</button>
+  </div>
+</section>
+
+<section class="screen" id="s5">
+  <div class="wrap">
+    <div class="eyebrow">Just one more thing</div>
+    <h2>A Message From Me</h2>
+    <div class="card">
+      <div style="font-size:55px">🎬 ♡</div>
+      <p>A little birthday message, saved just for you.</p>
+      <video id="birthdayVideo" controls playsinline preload="metadata"
+        style="width:100%;border-radius:15px;background:#f1d7e1"
+        class="hidden"></video>
+      <p class="small" id="videoNote">Your birthday video will be added later.</p>
+    </div>
+    <button class="btn" onclick="show('s6')">Continue ♡</button>
+  </div>
+</section>
+
+<section class="screen" id="s6">
+  <div class="wrap">
+    <div class="eyebrow">Open when you need it</div>
+    <h2>Little Letters for You</h2>
+    <button class="envelope-btn" onclick="letter(0)">💌 When you need a smile</button>
+    <button class="envelope-btn" onclick="letter(1)">💗 When you miss me</button>
+    <button class="envelope-btn" onclick="letter(2)">🫶 When you need comfort</button>
+    <div class="card hidden" id="littleLetter" aria-live="polite">
+      <h2 id="littleTitle"></h2>
+      <p id="littleMessage"></p>
+      <button class="btn secondary" onclick="document.getElementById('littleLetter').classList.add('hidden')">Close ♡</button>
+    </div>
+    <button class="btn" onclick="show('s7')">One More Surprise →</button>
+  </div>
+</section>
+
+<section class="screen" id="s7">
+  <div class="wrap">
+    <div class="eyebrow">Make a wish, birthday girl</div>
+    <h1>Happy Birthday,<br>Wulan! ♡</h1>
+    <div class="cake">🎂</div>
+    <p>Close your eyes for a moment, make a little wish, and remember how loved you are.</p>
+    <button class="btn" onclick="wish()">Make a Wish ✨</button>
+    <p id="wishMessage" aria-live="polite"></p>
+    <button class="btn secondary" onclick="show('s8')">The Last Little Secret →</button>
+  </div>
+</section>
+
+<section class="screen" id="s8">
+  <div class="wrap">
+    <div class="eyebrow">Until our next memory</div>
+    <div class="heart" onclick="bonus()" style="cursor:pointer" aria-label="Reveal a little secret">♥</div>
+    <h1>Our Story Isn't Over</h1>
+    <p>Twelve pictures, a little letter, and one birthday can't hold all the memories we still have ahead of us.</p>
+    <div class="card hidden" id="bonus">
+      <h2>One Last Thing ♡</h2>
+      <p>Of all the people in this big world, I'm really glad I get to know you, Wulan. Here's to more little moments together.</p>
+    </div>
+    <button class="btn" onclick="show('s0')">Start Our Story Again ↺</button>
+  </div>
+</section>
+</main>
+
+<footer aria-label="Website sections">
+  <button onclick="show('s0')">Home</button>
+  <button onclick="show('s2')">Letter</button>
+  <button onclick="show('s3')">Memories</button>
+  <button onclick="show('s4')">Song</button>
+  <button onclick="show('s6')">Letters</button>
+  <button onclick="show('s7')">Birthday</button>
+</footer>
+
+<script>
+const ANNIVERSARY = "02/04/2026";
+
+function show(id) {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+  const video = document.getElementById("birthdayVideo");
+  if (id !== "s5") video.pause();
+}
+
+function unlock() {
+  const value = document.getElementById("password").value.trim();
+  if (value === ANNIVERSARY) {
+    document.getElementById("error").textContent = "";
+    show("s1");
+  } else {
+    document.getElementById("error").textContent =
+      "Not quite, baby. Try our special date again ♡";
+  }
+}
+document.getElementById("password").addEventListener("keydown", e => {
+  if (e.key === "Enter") unlock();
+});
+
+const memories = [
+  ["Look at Us, Baby ♡","Just two people making memories… and me somehow becoming the luckiest guy ever."],
+  ["Just You and Me","My favorite person, caught in one little frame."],
+  ["The Start of Something Special","Little did I know how many memories we'd make after this."],
+  ["My Favorite Trouble Maker","Baby girl, how are you this cute and this annoying at the same time? 😭♡"],
+  ["A Little Piece of Happiness","Sometimes, the little things are the ones I remember most."],
+  ["You Make Me Smile","If happiness had a little face, I bet it would remind me of you."],
+  ["A Memory I Treasure","There's a reason this moment deserves a place in my little album."],
+  ["My Kind of Perfect","Not because everything was perfect, but because this memory is ours."],
+  ["If I Could Keep a Moment","I'd keep the feeling behind this picture a little longer."],
+  ["Still My Favorite Girl","Through all the little changes, you're still my favorite person."],
+  ["More Memories, Please","My baby, I think we still have so many little adventures ahead of us."],
+  ["This Is Only the Beginning","Twelve pictures can't hold our whole story. There's still so much left to write with you, Wulan."]
+];
+let photoIndex = 0;
+function renderPhoto() {
+  const [title, caption] = memories[photoIndex];
+  document.getElementById("photoTitle").textContent = title;
+  document.getElementById("photoCaption").textContent = caption;
+  document.getElementById("photoCount").textContent =
+    String(photoIndex + 1).padStart(2,"0") + " / 12";
+}
+function movePhoto(step) {
+  photoIndex = (photoIndex + step + memories.length) % memories.length;
+  renderPhoto();
+}
+
+const letters = [
+  ["When you need a smile","Baby, here's your reminder that you're someone's favorite person. You make ordinary days special just by being you. I hope something makes you smile today — and if not, imagine me trying way too hard to make you laugh. 😭♡"],
+  ["When you miss me","If we're apart right now, remember that a little distance doesn't erase the good things we share. Think of one of our favorite memories, take a breath, and save a story to tell me when we talk again. ♡"],
+  ["When you need comfort","You don't have to have everything figured out today, Wulan. It's okay to rest, take things one step at a time, and ask someone you trust for support. I hope tomorrow feels a little lighter. Be gentle with yourself, baby. 🫶"]
+];
+function letter(i) {
+  document.getElementById("littleTitle").textContent = letters[i][0];
+  document.getElementById("littleMessage").textContent = letters[i][1];
+  document.getElementById("littleLetter").classList.remove("hidden");
+}
+
+function toggleVinyl() {
+  document.getElementById("vinyl").classList.toggle("playing");
+}
+document.getElementById("audio").addEventListener("play", () =>
+  document.getElementById("vinyl").classList.add("playing"));
+document.getElementById("audio").addEventListener("pause", () =>
+  document.getElementById("vinyl").classList.remove("playing"));
+
+function wish() {
+  document.getElementById("wishMessage").textContent =
+    "✨ Happy birthday, my baby! May this year bring you beautiful surprises, happy memories, and so many reasons to smile. ♡ 🎉";
+}
+function bonus() {
+  document.getElementById("bonus").classList.toggle("hidden");
+}
+renderPhoto();
+</script>
+</body>
+</html>
