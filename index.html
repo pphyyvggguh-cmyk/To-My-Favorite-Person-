@@ -125,7 +125,7 @@ Happy birthday, my love. I'm so glad our story began.
 
 With all my love,
 Your future husband (manifesting 😭💍)</article><div class="letter-progress" aria-label="Progress membaca surat"><span id="letterProgressFill"></span></div><p class="muted" id="letterReadStatus" style="text-align:center;margin:3px 0">Geser surat di atas sampai bagian paling bawah ya ♡</p><button class="btn letter-finish" id="letterFinish" onclick="finishLetter()">Aku sudah selesai baca 💌</button></div></section>
-<section class="content-section" id="memories"><div class="wrap"><div class="section-head"><div class="eyebrow">Chapter 01 · Our memories</div><h2>Our Little Story ♡</h2><p>Album kenangan asli kita. Edit foto, tanggal, judul, dan ceritanya di sini; perjalanan 30 negara ada di bagian Our Little World. ♡</p></div><div class="card" style="max-width:650px;margin:0 auto 20px;border-style:dashed"><strong>☁️ Sinkronisasi online</strong><p class="muted">Fitur cloud belum aktif pada file ini. Foto yang disimpan di satu HP tidak akan otomatis muncul di HP lain sampai Firebase disambungkan.</p></div><div class="photo-grid" id="photoGrid"></div><details class="card editor"><summary>✎ Edit memories</summary><p class="muted">Pilih kartu, ubah foto/tanggal/judul/caption, lalu simpan. Versi ini masih menyimpan di browser perangkat ini. Sinkronisasi online perlu konfigurasi Firebase sebelum perubahan bisa muncul di HP Wulan.</p><div class="editor-grid"><label class="wide">Pilih kenangan<select id="editIndex" class="field" style="text-align:left;margin:5px 0"></select></label><label class="wide">Pilih foto<input id="editImage" class="field" type="file" accept="image/*"></label><label>Tanggal<input id="editDate" class="field" type="date"></label><label>Judul<input id="editTitle" class="field" maxlength="70"></label><label class="wide">Caption<textarea id="editCaption" class="field" maxlength="300"></textarea></label><div class="wide"><button class="btn" onclick="saveMemory()">Simpan kenangan ♡</button><button class="btn secondary" onclick="resetMemory()">Reset kartu ini</button></div></div></details></div></section>
+<section class="content-section" id="memories"><div class="wrap"><div class="section-head"><div class="eyebrow">Chapter 01 · Our memories</div><h2>Our Little Moments ♡</h2><p>30 frame foto dalam satu scrapbook kenangan kita. Ketuk foto untuk memperbesar, lalu edit tiap frame untuk memasukkan foto, tanggal, dan cerita kita. ♡</p></div><div class="card" style="max-width:650px;margin:0 auto 20px;border-style:dashed"><strong>☁️ Sinkronisasi online</strong><p class="muted">Fitur cloud belum aktif pada file ini. Foto yang disimpan di satu HP tidak akan otomatis muncul di HP lain sampai Firebase disambungkan.</p></div><div class="photo-grid" id="photoGrid"></div><details class="card editor"><summary>✎ Edit memories</summary><p class="muted">Pilih kartu, ubah foto/tanggal/judul/caption, lalu simpan. Versi ini masih menyimpan di browser perangkat ini. Sinkronisasi online perlu konfigurasi Firebase sebelum perubahan bisa muncul di HP Wulan.</p><div class="editor-grid"><label class="wide">Pilih kenangan<select id="editIndex" class="field" style="text-align:left;margin:5px 0"></select></label><label class="wide">Pilih foto<input id="editImage" class="field" type="file" accept="image/*"></label><label>Tanggal<input id="editDate" class="field" type="date"></label><label>Judul<input id="editTitle" class="field" maxlength="70"></label><label class="wide">Caption<textarea id="editCaption" class="field" maxlength="300"></textarea></label><div class="wide"><button class="btn" onclick="saveMemory()">Simpan kenangan ♡</button><button class="btn secondary" onclick="resetMemory()">Reset kartu ini</button></div></div></details></div></section>
 
 <section class="content-section" id="world"><div class="wrap">
 <div class="section-head"><div class="eyebrow">A thousand places, one favorite person</div><h2>Our Little World 🌍</h2><p>Ketuk titik di globe untuk memilih negara. Tiap destinasi punya foto, ornamen khas, dan pesan kecil buat kita. ♡</p></div>
@@ -163,7 +163,7 @@ Your future husband (manifesting 😭💍)</article><div class="letter-progress"
 .destination{pointer-events:auto;display:grid;place-items:center;width:27px;height:27px;font-size:9px;transition:left .12s linear,top .12s linear,opacity .2s;}
 .destination.backside{opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(.4)}
 .destination.active{z-index:7}
-.globe-stage{touch-action:pan-y;isolation:isolate}
+.globe-stage{touch-action:pan-y;isolation:isolate}.globe{touch-action:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 .destination:focus-visible,.travel-dot:focus-visible{outline:3px solid #803d58;outline-offset:4px}
 .photo-frame img,.travel-info img{background:#f1d7e1}
@@ -183,6 +183,35 @@ button:disabled{opacity:.55;cursor:wait}
 #momentsPanel .memory-card h3{font-size:13px}
 #momentsPanel .memory-card p{font-size:11px}
 @keyframes panelPop{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+/* V9: scrapbook photobooth collage inspired by the user's references */
+#momentsPanel{background:radial-gradient(ellipse at 10% 5%,#ffe0eb 0,transparent 32%),radial-gradient(ellipse at 90% 85%,#e7dff7 0,transparent 30%),#fff8f4;border:1px solid #f0d8e1;border-radius:24px}
+#momentsPanel .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;padding:13px 7px 24px;align-items:start}
+#momentsPanel .memory-card{position:relative;overflow:visible;background:#fffdfb;border:5px solid #fffdfb;border-bottom-width:18px;border-radius:4px;padding:5px 5px 10px;box-shadow:0 7px 18px #38232b28;transform:rotate(-2deg);transition:transform .25s,box-shadow .25s}
+#momentsPanel .memory-card:nth-child(4n+2){transform:rotate(2.4deg);background:#f8e7ef}
+#momentsPanel .memory-card:nth-child(4n+3){transform:rotate(1.3deg)}
+#momentsPanel .memory-card:nth-child(4n){transform:rotate(-1.7deg);background:#f5f0e8}
+#momentsPanel .memory-card:before{content:'✦';position:absolute;z-index:4;top:-12px;right:10px;color:#d6a94d;font-size:23px;text-shadow:0 1px 2px #fff}
+#momentsPanel .memory-card:after{content:'';position:absolute;z-index:5;top:-7px;left:calc(50% - 22px);width:44px;height:13px;background:#e9b8c9b8;transform:rotate(-4deg);box-shadow:0 1px 2px #49313b15}
+#momentsPanel .memory-card:nth-child(3n):after{background:#b8d5e5c9;transform:rotate(5deg)}
+#momentsPanel .memory-card:active,#momentsPanel .memory-card:hover{transform:rotate(0) scale(1.025);z-index:8;box-shadow:0 12px 24px #38232b35}
+#momentsPanel .memory-card .photo-frame{aspect-ratio:4/5;border-radius:1px;background:repeating-linear-gradient(135deg,#f6e4eb,#f6e4eb 8px,#fff8fa 8px,#fff8fa 16px)}
+#momentsPanel .memory-card .photo-frame img{filter:saturate(.92) contrast(1.02)}
+#momentsPanel .memory-card .placeholder{min-height:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:15px;background:linear-gradient(145deg,#f8e0e9,#fff9f4 55%,#e7e5f7)}
+#momentsPanel .memory-card .placeholder:before{content:'♡';font-size:35px;color:#a35b78}
+#momentsPanel .memory-card h3{text-align:center;font-family:'Playfair Display',serif;font-size:15px;line-height:1.25;margin:8px 2px 4px}
+#momentsPanel .memory-card p{text-align:center;font-size:11px;line-height:1.45}
+#momentsPanel .memory-card time{text-align:center;font-size:9px}
+#momentsPanel .memory-card .country-ornament{top:7px;right:7px;font-size:10px}
+#momentsPanel .memory-actions{justify-content:center}
+#momentsPanel .tiny-btn{font-size:10px;padding:6px 8px}
+@media(min-width:700px){#momentsPanel .photo-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding:20px}}
+@media(max-width:380px){#momentsPanel .photo-grid{gap:10px;padding:10px 3px}#momentsPanel .memory-card{border-width:4px;border-bottom-width:14px;padding:4px 4px 7px}#momentsPanel .memory-card h3{font-size:13px}}
+/* The pin overlay uses the stage coordinate system; the earth texture and all pins share one longitude origin. */
+#destinationMarkers{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;pointer-events:none;z-index:8}
+#travelGlobe{flex:none;transform:none!important}
+#travelGlobe .earth-texture{background-size:200% 100%;background-repeat:repeat-x;transition:none!important}
+.destination{will-change:left,top;backface-visibility:hidden}
+
 #travelGlobe{will-change:transform;transform-origin:center;}
 #travelGlobe .earth-texture{will-change:background-position;}
 .globe-stage.is-dragging .plane{opacity:.25}
@@ -243,15 +272,28 @@ let globeRotation=106.8, globeTilt=0, globeDrag=null;
 function projectGlobePins(){
  const globe=document.getElementById('travelGlobe'),stage=document.querySelector('.globe-stage'),host=document.getElementById('destinationMarkers');
  if(!globe||!stage||!host)return;
- const gr=globe.getBoundingClientRect(),sr=stage.getBoundingClientRect(),size=gr.width,cx=gr.left-sr.left+size/2,cy=gr.top-sr.top+size/2,r=size*.455;
- host.style.inset='0';
+ const gr=globe.getBoundingClientRect(),sr=stage.getBoundingClientRect();
+ const size=Math.min(gr.width,gr.height),cx=gr.left-sr.left+gr.width/2,cy=gr.top-sr.top+gr.height/2,r=size*.465;
+ host.style.position='absolute';host.style.left='0';host.style.top='0';host.style.width='100%';host.style.height='100%';
+ const rot=((globeRotation%360)+360)%360*Math.PI/180,tilt=globeTilt*Math.PI/180;
  [...host.children].forEach((b,i)=>{
-  const [lat,lon]=destinationCoords[i]||[0,0],phi=lat*Math.PI/180,delta=(lon-globeRotation)*Math.PI/180,tilt=globeTilt*Math.PI/180;
-  const x=Math.cos(phi)*Math.sin(delta), y=Math.sin(phi)*Math.cos(tilt)-Math.cos(phi)*Math.cos(delta)*Math.sin(tilt), z=Math.sin(phi)*Math.sin(tilt)+Math.cos(phi)*Math.cos(delta)*Math.cos(tilt);
-  b.style.left=(cx+x*r)+'px';b.style.top=(cy-y*r)+'px';b.classList.toggle('backside',z<-.04);b.style.opacity=z<-.04?'0':String(.55+Math.max(0,z)*.45);b.style.transform=`translate(-50%,-50%) scale(${i===destinationIndex?1.2:(.78+Math.max(0,z)*.22)})`;
+  const [latDeg,lonDeg]=destinationCoords[i]||[0,0];
+  const lat=latDeg*Math.PI/180,lon=lonDeg*Math.PI/180;
+  // Orthographic projection: each marker is projected from its true latitude/longitude
+  // onto the visible hemisphere around the current central meridian.
+  const d=lon-rot;
+  const east=Math.cos(lat)*Math.sin(d);
+  const north=Math.sin(lat)*Math.cos(tilt)-Math.cos(lat)*Math.cos(d)*Math.sin(tilt);
+  const depth=Math.sin(lat)*Math.sin(tilt)+Math.cos(lat)*Math.cos(d)*Math.cos(tilt);
+  b.style.left=(cx+east*r)+'px';b.style.top=(cy-north*r)+'px';
+  const hidden=depth<-.015;b.classList.toggle('backside',hidden);b.style.pointerEvents=hidden?'none':'auto';
+  b.style.opacity=hidden?'0':String(.72+Math.max(0,depth)*.28);
+  b.style.transform=`translate(-50%,-50%) scale(${i===destinationIndex?1.18:(.78+Math.max(0,depth)*.2)})`;
  });
- const texture=document.getElementById('earthTexture');if(texture){const shift=((globeRotation+180)%360+360)%360/360*100;texture.style.backgroundPosition=`${shift}% 50%`;texture.style.transform=`rotate(${globeTilt*.08}deg)`;}
+ const texture=document.getElementById('earthTexture');
+ if(texture){const pct=(((globeRotation+180)%360)+360)%360/360*100;texture.style.backgroundPosition=`${pct}% 50%`;texture.style.transform=`scaleY(${Math.max(.78,Math.cos(tilt*.18))})`;}
 }
+
 function rotateGlobe(deltaX,deltaY=0){globeRotation=((globeRotation-deltaX*.72)%360+360)%360;globeTilt=Math.max(-70,Math.min(70,globeTilt+deltaY*.42));projectGlobePins()}
 function enableGlobeDrag(){
  const globe=document.getElementById('travelGlobe');if(!globe||globe.dataset.dragReady)return;globe.dataset.dragReady='1';
@@ -293,7 +335,7 @@ function closeMemoryModal(){document.getElementById('memoryModal').classList.rem
 document.getElementById('memoryModal').addEventListener('keydown',e=>{if(e.key==='Escape')closeMemoryModal()});
 document.getElementById('destinationPhoto').addEventListener('error',function(){this.alt='Foto destinasi tidak dapat dimuat. Periksa koneksi internet.'});
 function openMemoryModal(i){const m=memories[i];if(!m)return;const img=document.getElementById('modalPhoto');if(m.image){img.src=m.image;img.style.display='block'}else{img.removeAttribute('src');img.style.display='none'}document.getElementById('modalDate').textContent=m.date||'A little day to remember ♡';document.getElementById('modalTitle').textContent=m.title||'Our little memory ♡';document.getElementById('modalCaption').textContent=m.caption||'';document.getElementById('memoryModal').classList.add('open');document.body.style.overflow='hidden'}
-function renderGrid(){const grid=document.getElementById('photoGrid');grid.innerHTML='';memories.forEach((m,i)=>{const card=document.createElement('article');card.className='memory-card';const frame=document.createElement('div');frame.className='photo-frame';frame.onclick=()=>openMemoryModal(i);if(m.image){const img=document.createElement('img');img.src=m.image;img.alt=m.title||'Our memory';frame.appendChild(img)}else{const ph=document.createElement('div');ph.className='placeholder';ph.textContent='Our memory '+String(i+1).padStart(2,'0')+' ♡';frame.appendChild(ph)}const ornament=document.createElement('span');ornament.className='country-ornament';ornament.textContent=destinations[i].flag+' ✦';ornament.setAttribute('aria-hidden','true');frame.appendChild(ornament);const h=document.createElement('h3');h.textContent=m.title||'Our little memory ♡';const date=document.createElement('time');date.textContent=m.date||'A DAY TO REMEMBER';const p=document.createElement('p');p.textContent=m.caption||'A little moment that belongs to us. ♡';const actions=document.createElement('div');actions.className='memory-actions';const edit=document.createElement('button');edit.className='tiny-btn';edit.textContent='Edit';edit.onclick=(ev)=>{ev.stopPropagation();document.getElementById('editIndex').value=String(i);loadEditor();document.querySelector('.editor').open=true;document.querySelector('.editor').scrollIntoView({behavior:'smooth',block:'center'});};actions.append(edit);card.append(frame,date,h,p,actions);grid.appendChild(card)});const select=document.getElementById('editIndex');const old=select.value;select.innerHTML='';memories.forEach((m,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=String(i+1).padStart(2,'0')+' · '+(m.title||'Memory');select.appendChild(o)});select.value=old||'0';loadEditor()}
+function renderGrid(){const grid=document.getElementById('photoGrid');grid.innerHTML='';memories.forEach((m,i)=>{const card=document.createElement('article');card.className='memory-card';const frame=document.createElement('div');frame.className='photo-frame';frame.onclick=()=>openMemoryModal(i);if(m.image){const img=document.createElement('img');img.src=m.image;img.alt=m.title||'Our memory';frame.appendChild(img)}else{const ph=document.createElement('div');ph.className='placeholder';ph.textContent='Our memory '+String(i+1).padStart(2,'0')+' ♡';frame.appendChild(ph)}const ornament=document.createElement('span');ornament.className='country-ornament';ornament.textContent=destinations[i].flag+' ✦';ornament.setAttribute('aria-hidden','true');frame.appendChild(ornament);const h=document.createElement('h3');h.textContent=m.title||'Our little memory ♡';const date=document.createElement('time');date.textContent=m.date||'A DAY TO REMEMBER';const p=document.createElement('p');p.textContent=m.caption||'A little moment that belongs to us. ♡';const actions=document.createElement('div');actions.className='memory-actions';const edit=document.createElement('button');edit.className='tiny-btn';edit.textContent='Edit';edit.onclick=(ev)=>{ev.stopPropagation();document.getElementById('editIndex').value=String(i);loadEditor();document.querySelector('.editor').open=true;document.querySelector('.editor').focus?.();};actions.append(edit);card.append(frame,date,h,p,actions);grid.appendChild(card)});const select=document.getElementById('editIndex');const old=select.value;select.innerHTML='';memories.forEach((m,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=String(i+1).padStart(2,'0')+' · '+(m.title||'Memory');select.appendChild(o)});select.value=old||'0';loadEditor()}
 function loadEditor(){const i=Number(document.getElementById('editIndex').value||0),m=memories[i];if(!m)return;document.getElementById('editDate').value=m.date||'';document.getElementById('editTitle').value=m.title||'';document.getElementById('editCaption').value=m.caption||'';document.getElementById('editImage').value=''}
 document.getElementById('editIndex').addEventListener('change',loadEditor);
 document.getElementById('editImage').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(!f)return;if(!f.type.startsWith('image/')){toast('Pilih file gambar ya ♡');return}if(f.size>4*1024*1024){toast('Foto lebih dari 4 MB. Pilih foto lebih kecil agar browser tidak berat.');e.target.value='';return}const reader=new FileReader();reader.onload=()=>{window.pendingMemoryImage=reader.result;toast('Foto dipilih. Tekan Simpan kenangan ♡')};reader.readAsDataURL(f)});
@@ -319,7 +361,7 @@ function showGuideStep(i,scrollTarget){guideIndex=(i+guideLines.length)%guideLin
 function guideNext(){if(guideIndex>=guideLines.length-1){hideGuide();document.getElementById('guideMenu').classList.add('open');return}showGuideStep(guideIndex+1,true)}
 function guideTap(){const menu=document.getElementById('guideMenu');menu.classList.toggle('open');document.getElementById('guideBubble').classList.remove('show');placeGuide();const ch=document.getElementById('chibiGuide');['guide-bounce','guide-fly','guide-dance','guide-spin','guide-love'].forEach(c=>ch.classList.remove(c));const moves=['guide-bounce','guide-fly','guide-dance','guide-spin','guide-love'];ch.classList.add(moves[(++guideIndex)%moves.length]);}
 function placeGuide(pos){const ch=document.getElementById('chibiGuide');ch.classList.remove('guide-left','guide-right','guide-top-left','guide-top-right','guide-bottom-left','guide-bottom-right','guide-center-left','guide-center-right');const spots=['guide-bottom-right','guide-bottom-left','guide-top-right','guide-center-left','guide-top-left','guide-center-right'];ch.classList.add(spots[guideIndex%spots.length]);const moves=['guide-bounce','guide-fly','guide-dance','guide-spin','guide-love'];ch.classList.remove(...moves);void ch.offsetWidth;ch.classList.add(moves[guideIndex%moves.length]);}
-document.getElementById('secret').querySelector('.secret-heart').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();bonus()}});buildDestinationMarkers();selectDestination(3);window.addEventListener('resize',()=>requestAnimationFrame(projectGlobePins));window.addEventListener('orientationchange',()=>setTimeout(projectGlobePins,180));renderGrid();document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMemoryModal();document.getElementById('guideMenu').classList.remove('open');hideGuide()}});
+document.getElementById('secret').querySelector('.secret-heart').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();bonus()}});buildDestinationMarkers();selectDestination(3);window.addEventListener('resize',()=>requestAnimationFrame(projectGlobePins));window.addEventListener('orientationchange',()=>setTimeout(()=>{stableGlobeLayout();projectGlobePins()},220));window.addEventListener('pageshow',()=>requestAnimationFrame(()=>{stableGlobeLayout();projectGlobePins()}));renderGrid();document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMemoryModal();document.getElementById('guideMenu').classList.remove('open');hideGuide()}});
 
 /* V7 interaction controller: greeting -> scrollable letter -> chibi menu -> feature dialogue -> slide */
 const featureCopy={
@@ -344,7 +386,7 @@ function setupLetterReader(){const letter=document.querySelector('#letter .lette
 function finishLetter(){if(!letterDone){toast('Baca suratnya sampai bawah dulu ya, Wulan ♡');return}document.getElementById('guideText').textContent='Makasih sudah baca sampai akhir! Sekarang ketuk aku, ya. Aku bakal bukain menu kecil dan kamu bisa pilih petualangan selanjutnya. 🌷';document.getElementById('guideBubble').classList.add('show');document.getElementById('letterFinish').textContent='Oke, aku mau pilih menu 🌷';document.getElementById('letterFinish').onclick=()=>{hideGuide();guideTap()};}
 function backToGate(){document.body.classList.remove('app-open');document.body.classList.add('locked');document.querySelectorAll('section.content-section').forEach(s=>s.classList.remove('screen-active'));document.getElementById('guideMenu').classList.remove('open');document.getElementById('guideBubble').classList.remove('show');document.getElementById('featureDialogue').classList.remove('open');document.getElementById('password').value='';window.scrollTo({top:0,left:0,behavior:'instant'})}
 // Marker positions are re-projected after layout settles; keep the marker layer attached to the globe stage.
-function stableGlobeLayout(){const globe=document.getElementById('travelGlobe'),host=document.getElementById('destinationMarkers'),stage=document.querySelector('.globe-stage');if(!globe||!host||!stage)return;host.style.position='absolute';host.style.inset='0';host.style.width='100%';host.style.height='100%';host.style.pointerEvents='none';host.style.zIndex='7';requestAnimationFrame(()=>{projectGlobePins();requestAnimationFrame(projectGlobePins)})}
+function stableGlobeLayout(){const globe=document.getElementById('travelGlobe'),host=document.getElementById('destinationMarkers'),stage=document.querySelector('.globe-stage');if(!globe||!host||!stage)return;host.style.position='absolute';host.style.inset='0';host.style.width='100%';host.style.height='100%';requestAnimationFrame(()=>{projectGlobePins();requestAnimationFrame(projectGlobePins)});}
 const oldBuildDestinationMarkers=buildDestinationMarkers;buildDestinationMarkers=function(){oldBuildDestinationMarkers();stableGlobeLayout()};
 window.addEventListener('resize',stableGlobeLayout);window.addEventListener('orientationchange',()=>setTimeout(stableGlobeLayout,220));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMemoryModal();document.getElementById('guideMenu').classList.remove('open');hideGuide();closeFeatureDialogue()}if(e.key==='Enter'&&document.getElementById('featureDialogue').classList.contains('open')&&e.target.tagName!=='TEXTAREA'){continueFeature()}});
@@ -383,4 +425,6 @@ combineWorldAndMoments();addMiniPlayroom();
 // Better globe controls: rotation is continuous, marker layer remains in stage coordinates, and wheel adjusts tilt gently.
 (function(){const g=document.getElementById('travelGlobe'),stage=document.querySelector('.globe-stage');if(!g||!stage)return;let lastTime=0,velocityX=0,velocityY=0;g.addEventListener('pointerdown',()=>{stage.classList.add('is-dragging');velocityX=velocityY=0});g.addEventListener('pointermove',e=>{if(!globeDrag)return;velocityX=e.movementX||0;velocityY=e.movementY||0});['pointerup','pointercancel','lostpointercapture'].forEach(n=>g.addEventListener(n,()=>{stage.classList.remove('is-dragging')}));g.addEventListener('wheel',e=>{e.preventDefault();globeTilt=Math.max(-70,Math.min(70,globeTilt+e.deltaY*.06));projectGlobePins()},{passive:false});g.addEventListener('dblclick',()=>{globeRotation=0;globeTilt=0;projectGlobePins();toast('Globe kembali ke arah awal 🌍')});})();
 
+/* V9 stability: reproject after image/font/layout changes. */
+window.addEventListener('load',()=>{setTimeout(()=>{stableGlobeLayout();projectGlobePins()},120)});
 </script></body></html>
